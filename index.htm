@@ -199,48 +199,65 @@
             color: #e0e0e0;
         }
         
-        /* GitHub API Section */
-        .github-section {
+        /* Metadata Section */
+        .metadata-section {
             margin-top: 40px;
             padding: 20px;
             background-color: #252525;
             border-radius: 8px;
             border: 1px solid #333;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
         
-        .github-section h3 {
-            color: #ffffff;
-            border-bottom: 1px solid #333;
-        }
-        
-        .github-button {
-            background-color: #24292e;
-            color: white;
-            border: 1px solid #444;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            margin: 10px 0;
-            transition: background-color 0.2s;
-        }
-        
-        .github-button:hover {
-            background-color: #2f363d;
-        }
-        
-        /* Word Count Section */
-        .wordcount-section {
-            margin-top: 30px;
+        .metadata-box {
             padding: 15px;
-            background-color: #252525;
+            background-color: #1e1e1e;
             border-radius: 5px;
             border: 1px solid #333;
         }
         
-        #totalWordCount {
-            font-weight: bold;
+        .metadata-box h4 {
             color: #4dabf7;
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .metadata-box .value {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .metadata-box .label {
+            color: #b0b0b0;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        
+        .refresh-btn {
+            background-color: #4dabf7;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+            margin-top: 10px;
+        }
+        
+        .refresh-btn:hover {
+            background-color: #339af0;
+        }
+        
+        .refresh-btn:disabled {
+            background-color: #555;
+            cursor: not-allowed;
         }
         
         /* Links in content */
@@ -265,6 +282,10 @@
             
             main {
                 padding: 15px;
+            }
+            
+            .metadata-section {
+                grid-template-columns: 1fr;
             }
             
             .toc-table {
@@ -310,6 +331,10 @@
         
         .section-content.active {
             display: block;
+        }
+        
+        .loading {
+            opacity: 0.5;
         }
     </style>
 </head>
@@ -429,19 +454,22 @@ This paper presents a comparative analysis of the drivers of efficiency and sust
             <p>Content for this section...</p>
         </section>
         
-        <!-- GitHub API Section -->
-        <div class="github-section">
-            <h3>Repository Information</h3>
-            <div id="last-updated">Loading last update time...</div>
-            <button onclick="verifyLastUpdatedTime()" class="github-button">
-                Verify Last Modified Time
-            </button>
-        </div>
-        
-        <!-- Word Count Section -->
-        <div class="wordcount-section">
-            <h3>Word Count</h3>
-            <p id="totalWordCount"></p>
+        <!-- Metadata Section -->
+        <div class="metadata-section">
+            <div class="metadata-box">
+                <h4><i class="fas fa-clock"></i> Last Updated</h4>
+                <div class="value" id="lastUpdated">Loading...</div>
+                <div class="label" id="relativeTime"></div>
+                <button onclick="refreshMetadata()" class="refresh-btn" id="refreshBtn">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </button>
+            </div>
+            
+            <div class="metadata-box">
+                <h4><i class="fas fa-file-word"></i> Word Count</h4>
+                <div class="value" id="wordCount">0</div>
+                <div class="label">Total words in analysis and conclusion</div>
+            </div>
         </div>
     </main>
     
@@ -459,6 +487,101 @@ This paper presents a comparative analysis of the drivers of efficiency and sust
             } else {
                 icon.style.transform = 'rotate(0deg)';
             }
+        }
+        
+        // Format relative time
+        function getRelativeTime(date) {
+            const now = new Date();
+            const diff = now - date;
+            const minutes = Math.floor(diff / 60000);
+            const hours = Math.floor(diff / 3600000);
+            const days = Math.floor(diff / 86400000);
+            
+            if (minutes < 1) return 'Just now';
+            if (minutes < 60) return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+            if (hours < 24) return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+            if (days < 30) return `${days} day${days > 1 ? 's' : ''} ago`;
+            
+            return date.toLocaleDateString();
+        }
+        
+        // Format date nicely
+        function formatDate(date) {
+            const options = { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            };
+            return date.toLocaleDateString('en-GB', options);
+        }
+        
+        // GitHub API Functions
+        async function getLastUpdatedTime() {
+            const username = 'nr0025';
+            const repo = 'FY0025';
+            
+            const url = `https://api.github.com/repos/${username}/${repo}/commits`;
+            
+            try {
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/vnd.github.v3+json',
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.status}`);
+                }
+                
+                const commits = await response.json();
+                
+                if (commits && commits.length > 0) {
+                    const lastCommitDate = new Date(commits[0].commit.committer.date);
+                    document.getElementById('lastUpdated').innerText = formatDate(lastCommitDate);
+                    document.getElementById('relativeTime').innerText = getRelativeTime(lastCommitDate);
+                } else {
+                    document.getElementById('lastUpdated').innerText = 'No commits found';
+                    document.getElementById('relativeTime').innerText = '';
+                }
+            } catch (error) {
+                console.error('Error fetching repository data:', error);
+                document.getElementById('lastUpdated').innerText = 'Unable to fetch';
+                document.getElementById('relativeTime').innerText = 'Check repository settings';
+            }
+        }
+        
+        async function refreshMetadata() {
+            const btn = document.getElementById('refreshBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Refreshing...';
+            
+            await getLastUpdatedTime();
+            
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-sync-alt"></i> Refresh';
+            }, 1000);
+        }
+        
+        // Word Count Functions
+        function displayWordCount(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (!element) return 0;
+            
+            const text = element.textContent || element.innerText;
+            const wordArray = text.trim().split(/\s+/).filter(word => word.length > 0);
+            return wordArray.length;
+        }
+        
+        function displayTotalWordCount() {
+            const analysisCount = displayWordCount("Analysis_InText");
+            const conclusionCount = displayWordCount("Conclusion_InText");
+            
+            const totalWordCount = analysisCount + conclusionCount;
+            document.getElementById("wordCount").innerText = totalWordCount.toLocaleString();
         }
         
         // Show specific section content when dropdown link is clicked
@@ -516,64 +639,6 @@ This paper presents a comparative analysis of the drivers of efficiency and sust
             });
         });
         
-        // GitHub API Functions
-        async function getLastUpdatedTime() {
-            const username = 'nr0025';
-            const repo = 'FY0025';
-            
-            const url = `https://api.github.com/repos/${username}/${repo}/commits`;
-            
-            try {
-                const response = await fetch(url, {
-                    method: 'GET',
-                    headers: {
-                        'Accept': 'application/vnd.github.v3+json',
-                    }
-                });
-                
-                if (!response.ok) {
-                    throw new Error(`Error fetching data: ${response.status} - ${response.statusText}`);
-                }
-                
-                const commits = await response.json();
-                
-                if (commits && commits.length > 0) {
-                    const lastCommitDate = new Date(commits[0].commit.committer.date);
-                    document.getElementById('last-updated').innerText = `Last Modified Time: ${lastCommitDate.toLocaleString()}`;
-                } else {
-                    document.getElementById('last-updated').innerText = 'No commits found in the repository.';
-                }
-            } catch (error) {
-                console.error('Error fetching the last updated time:', error);
-                document.getElementById('last-updated').innerText = 'Error fetching update time. Please check the repository details.';
-            }
-        }
-        
-        async function verifyLastUpdatedTime() {
-            document.getElementById('last-updated').innerText = 'Verifying...';
-            await getLastUpdatedTime();
-            alert("Last modified time has been successfully verified from GitHub API.");
-        }
-        
-        // Word Count Functions
-        function displayWordCount(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (!element) return 0;
-            
-            const text = element.textContent || element.innerText;
-            const wordArray = text.trim().split(/\s+/);
-            return wordArray.length;
-        }
-        
-        function displayTotalWordCount() {
-            // Update with actual section IDs from your content
-            const analysisCount = displayWordCount("Analysis_InText");
-            const conclusionCount = displayWordCount("Conclusion_InText");
-            
-            const totalWordCount = analysisCount + conclusionCount;
-            document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
-        }
-        
         // Initialize everything when page loads
         window.onload = function() {
             getLastUpdatedTime();
@@ -581,7 +646,7 @@ This paper presents a comparative analysis of the drivers of efficiency and sust
             
             // Open dropdown if there's a hash in the URL
             const hash = window.location.hash;
-            if (hash && hash.includes('-impact') || hash.includes('-trend')) {
+            if (hash && (hash.includes('-impact') || hash.includes('-trend'))) {
                 const dropdown = document.getElementById('analysisDropdown');
                 const icon = document.querySelector('.dropdown-header i');
                 dropdown.classList.add('show');
