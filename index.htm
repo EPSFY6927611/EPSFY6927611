@@ -517,39 +517,29 @@ This paper presents a comparative analysis of the drivers of efficiency and sust
             return date.toLocaleDateString('en-GB', options);
         }
         
-        // GitHub API Functions
+        // Get last modified time from document
         async function getLastUpdatedTime() {
-            const username = 'nr0025';
-            const repo = 'FY0025';
-            
-            const url = `https://api.github.com/repos/${username}/${repo}/commits`;
-            
             try {
-                const response = await fetch(url, {
-                    method: 'GET',
-                    headers: {
-                        'Accept': 'application/vnd.github.v3+json',
-                    }
-                });
+                // Try to get from server headers
+                const response = await fetch(window.location.href, { method: 'HEAD' });
+                const lastModified = response.headers.get('Last-Modified');
                 
-                if (!response.ok) {
-                    throw new Error(`Error: ${response.status}`);
-                }
-                
-                const commits = await response.json();
-                
-                if (commits && commits.length > 0) {
-                    const lastCommitDate = new Date(commits[0].commit.committer.date);
-                    document.getElementById('lastUpdated').innerText = formatDate(lastCommitDate);
-                    document.getElementById('relativeTime').innerText = getRelativeTime(lastCommitDate);
+                let lastModifiedDate;
+                if (lastModified) {
+                    lastModifiedDate = new Date(lastModified);
                 } else {
-                    document.getElementById('lastUpdated').innerText = 'No commits found';
-                    document.getElementById('relativeTime').innerText = '';
+                    // Fallback to current date if server doesn't provide Last-Modified
+                    lastModifiedDate = new Date(document.lastModified);
                 }
+                
+                document.getElementById('lastUpdated').innerText = formatDate(lastModifiedDate);
+                document.getElementById('relativeTime').innerText = getRelativeTime(lastModifiedDate);
             } catch (error) {
-                console.error('Error fetching repository data:', error);
-                document.getElementById('lastUpdated').innerText = 'Unable to fetch';
-                document.getElementById('relativeTime').innerText = 'Check repository settings';
+                console.error('Error fetching last modified time:', error);
+                // Fallback to document.lastModified
+                const lastModifiedDate = new Date(document.lastModified);
+                document.getElementById('lastUpdated').innerText = formatDate(lastModifiedDate);
+                document.getElementById('relativeTime').innerText = getRelativeTime(lastModifiedDate);
             }
         }
         
