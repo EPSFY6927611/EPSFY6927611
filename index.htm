@@ -21,8 +21,8 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
+            color: #e0e0e0;
+            background-color: #121212;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
@@ -33,7 +33,7 @@
             text-align: center;
             margin-bottom: 30px;
             padding-bottom: 20px;
-            border-bottom: 3px solid #9059a6;
+            border-bottom: 3px solid #333;
         }
         
         .banner-container {
@@ -45,44 +45,46 @@
             height: auto;
             display: block;
             margin: 0 auto;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
         }
         
         h1 {
-            color: #2c3e50;
+            color: #ffffff;
             font-size: 28px;
             margin-bottom: 10px;
             line-height: 1.3;
         }
         
         h2 {
-            color: #7f8c8d;
+            color: #b0b0b0;
             font-size: 18px;
             font-weight: normal;
         }
         
         /* Main Content Styles */
         main {
-            background-color: white;
+            background-color: #1e1e1e;
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
         
         h3 {
-            color: #9059a6;
+            color: #ffffff;
             margin-top: 30px;
             margin-bottom: 15px;
             padding-bottom: 5px;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid #333;
         }
         
         /* Table of Contents */
         .toc-container {
             margin: 25px 0;
             padding: 20px;
-            background-color: #f9f9f9;
+            background-color: #252525;
             border-radius: 5px;
-            border-left: 4px solid #9059a6;
+            border-left: 4px solid #444;
         }
         
         .toc-table {
@@ -92,7 +94,7 @@
         }
         
         .toc-table th {
-            background-color: #9059a6;
+            background-color: #333;
             color: white;
             padding: 12px;
             text-align: left;
@@ -100,24 +102,84 @@
         
         .toc-table td {
             padding: 10px 12px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #444;
         }
         
         .toc-table tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: #2a2a2a;
         }
         
         .toc-table tr:hover {
-            background-color: #e8e8e8;
+            background-color: #363636;
         }
         
         .toc-table a {
-            color: #2980b9;
+            color: #4dabf7;
             text-decoration: none;
+            display: block;
+            padding: 5px 0;
         }
         
         .toc-table a:hover {
+            color: #74c0fc;
             text-decoration: underline;
+        }
+        
+        /* Dropdown Styles */
+        .dropdown {
+            margin: 10px 0;
+        }
+        
+        .dropdown-header {
+            background-color: #333;
+            color: white;
+            padding: 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        
+        .dropdown-header:hover {
+            background-color: #444;
+        }
+        
+        .dropdown-header i {
+            transition: transform 0.3s;
+        }
+        
+        .dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            background-color: #2a2a2a;
+            border-radius: 0 0 4px 4px;
+            transition: max-height 0.5s ease-out;
+        }
+        
+        .dropdown-content.show {
+            max-height: 500px;
+        }
+        
+        .dropdown-item {
+            padding: 10px 20px;
+            border-bottom: 1px solid #3a3a3a;
+        }
+        
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+        
+        .dropdown-item a {
+            color: #b0b0b0;
+            text-decoration: none;
+            display: block;
+            transition: color 0.2s;
+        }
+        
+        .dropdown-item a:hover {
+            color: #4dabf7;
         }
         
         /* Content Sections */
@@ -131,29 +193,30 @@
             line-height: 1.5;
             margin: 15px 0;
             padding: 15px;
-            background-color: #f9f9f9;
+            background-color: #252525;
             border-radius: 5px;
-            border-left: 3px solid #9059a6;
+            border-left: 3px solid #444;
+            color: #e0e0e0;
         }
         
         /* GitHub API Section */
         .github-section {
             margin-top: 40px;
             padding: 20px;
-            background-color: #f8f9fa;
+            background-color: #252525;
             border-radius: 8px;
-            border: 1px solid #e1e4e8;
+            border: 1px solid #333;
         }
         
         .github-section h3 {
-            color: #24292e;
-            border-bottom: 1px solid #e1e4e8;
+            color: #ffffff;
+            border-bottom: 1px solid #333;
         }
         
         .github-button {
-            background-color: #2ea44f;
+            background-color: #24292e;
             color: white;
-            border: none;
+            border: 1px solid #444;
             padding: 10px 20px;
             border-radius: 6px;
             cursor: pointer;
@@ -163,21 +226,31 @@
         }
         
         .github-button:hover {
-            background-color: #2c974b;
+            background-color: #2f363d;
         }
         
         /* Word Count Section */
         .wordcount-section {
             margin-top: 30px;
             padding: 15px;
-            background-color: #e8f4fd;
+            background-color: #252525;
             border-radius: 5px;
-            border: 1px solid #c8e1ff;
+            border: 1px solid #333;
         }
         
         #totalWordCount {
             font-weight: bold;
-            color: #0366d6;
+            color: #4dabf7;
+        }
+        
+        /* Links in content */
+        a {
+            color: #4dabf7;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
         }
         
         /* Responsive Design */
@@ -196,6 +269,10 @@
             
             .toc-table {
                 font-size: 14px;
+            }
+            
+            .dropdown-header {
+                padding: 10px;
             }
         }
         
@@ -217,9 +294,22 @@
         /* Utility Classes */
         .hr-divider {
             height: 2px;
-            background-color: #9059a6;
+            background-color: #333;
             margin: 30px 0;
             border: none;
+        }
+        
+        /* Section visibility */
+        .section-content {
+            display: none;
+            padding: 15px;
+            background-color: #252525;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        .section-content.active {
+            display: block;
         }
     </style>
 </head>
@@ -247,22 +337,35 @@
                     <td><a href="#abstract">1. Abstract</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#population-growth-impact">2. The potential impact of population growth on the aviation industry</a></td>
+                    <td>
+                        <!-- Analysis Dropdown -->
+                        <div class="dropdown">
+                            <div class="dropdown-header" onclick="toggleDropdown()">
+                                <span>2. Analysis and Discussion</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="dropdown-content" id="analysisDropdown">
+                                <div class="dropdown-item">
+                                    <a href="#population-growth-impact">2.1 The potential impact of population growth on the aviation industry</a>
+                                </div>
+                                <div class="dropdown-item">
+                                    <a href="#jet-fuel-impact">2.2 How Jet fuel and engines impact the environment</a>
+                                </div>
+                                <div class="dropdown-item">
+                                    <a href="#production-trend">2.3 The aircraft production trend</a>
+                                </div>
+                                <div class="dropdown-item">
+                                    <a href="#fleet-trends">2.4 Fleet sizes and trends</a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
-                    <td><a href="#jet-fuel-impact">3. How Jet fuel and engines impact the environment</a></td>
+                    <td><a href="#conclusion">3. Conclusion</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#production-trend">4. The aircraft production trend</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#fleet-trends">5. Fleet sizes and trends</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#conclusion">6. Conclusion</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#references">7. References and Tables</a></td>
+                    <td><a href="#references">4. References and Tables</a></td>
                 </tr>
             </table>
         </div>
@@ -288,35 +391,39 @@ This paper presents a comparative analysis of the drivers of efficiency and sust
                         Toshihiko et al (2023)
                     </a>
                 </p>
+                
+                <!-- Analysis Subsections (initially hidden, shown when links are clicked) -->
+                <div id="population-growth-impact-content" class="section-content">
+                    <h4>The potential impact of population growth on the aviation industry</h4>
+                    <p>Content for this section will appear here when you click the link in the dropdown.</p>
+                </div>
+                
+                <div id="jet-fuel-impact-content" class="section-content">
+                    <h4>How Jet fuel and engines impact the environment</h4>
+                    <p>Content for this section will appear here when you click the link in the dropdown.</p>
+                </div>
+                
+                <div id="production-trend-content" class="section-content">
+                    <h4>The aircraft production trend</h4>
+                    <p>Content for this section will appear here when you click the link in the dropdown.</p>
+                </div>
+                
+                <div id="fleet-trends-content" class="section-content">
+                    <h4>Fleet sizes and trends</h4>
+                    <p>Content for this section will appear here when you click the link in the dropdown.</p>
+                </div>
             </div>
         </section>
         
-        <!-- Add more sections with appropriate IDs matching the table of contents -->
-        <section id="population-growth-impact" class="content-section">
-            <h3>The potential impact of population growth on the aviation industry</h3>
-            <p>Content for this section...</p>
-        </section>
-        
-        <section id="jet-fuel-impact" class="content-section">
-            <h3>How Jet fuel and engines impact the environment</h3>
-            <p>Content for this section...</p>
-        </section>
-        
-        <section id="production-trend" class="content-section">
-            <h3>The aircraft production trend</h3>
-            <p>Content for this section...</p>
-        </section>
-        
-        <section id="fleet-trends" class="content-section">
-            <h3>Fleet sizes and trends</h3>
-            <p>Content for this section...</p>
-        </section>
-        
+        <!-- Conclusion Section -->
         <section id="conclusion" class="content-section">
             <h3>Conclusion</h3>
-            <p>Content for this section...</p>
+            <div id="Conclusion_InText">
+                <p>Content for this section...</p>
+            </div>
         </section>
         
+        <!-- References Section -->
         <section id="references" class="content-section">
             <h3>References and Tables</h3>
             <p>Content for this section...</p>
@@ -339,6 +446,76 @@ This paper presents a comparative analysis of the drivers of efficiency and sust
     </main>
     
     <script>
+        // Toggle Dropdown Function
+        function toggleDropdown() {
+            const dropdown = document.getElementById('analysisDropdown');
+            const icon = document.querySelector('.dropdown-header i');
+            
+            dropdown.classList.toggle('show');
+            
+            // Rotate chevron icon
+            if (dropdown.classList.contains('show')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+        
+        // Show specific section content when dropdown link is clicked
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event listeners to dropdown links
+            const dropdownLinks = document.querySelectorAll('.dropdown-item a');
+            
+            dropdownLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get the target section ID from the href
+                    const targetId = this.getAttribute('href').substring(1);
+                    const contentId = targetId + '-content';
+                    
+                    // Hide all section contents first
+                    const allContents = document.querySelectorAll('.section-content');
+                    allContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    // Show the selected section content
+                    const targetContent = document.getElementById(contentId);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                        
+                        // Scroll to the content section
+                        targetContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                    
+                    // Close the dropdown after selection (optional)
+                    const dropdown = document.getElementById('analysisDropdown');
+                    const icon = document.querySelector('.dropdown-header i');
+                    dropdown.classList.remove('show');
+                    icon.style.transform = 'rotate(0deg)';
+                });
+            });
+            
+            // Also handle direct anchor links for regular navigation
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    // Only process if it's not a dropdown link (already handled above)
+                    if (href && !href.includes('-content') && href !== '#') {
+                        const targetId = href.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        
+                        if (targetElement) {
+                            e.preventDefault();
+                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+        });
+        
         // GitHub API Functions
         async function getLastUpdatedTime() {
             const username = 'nr0025';
@@ -391,9 +568,9 @@ This paper presents a comparative analysis of the drivers of efficiency and sust
         function displayTotalWordCount() {
             // Update with actual section IDs from your content
             const analysisCount = displayWordCount("Analysis_InText");
-            // Add more sections as needed
+            const conclusionCount = displayWordCount("Conclusion_InText");
             
-            const totalWordCount = analysisCount; // Add other sections here
+            const totalWordCount = analysisCount + conclusionCount;
             document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
         }
         
@@ -401,6 +578,15 @@ This paper presents a comparative analysis of the drivers of efficiency and sust
         window.onload = function() {
             getLastUpdatedTime();
             displayTotalWordCount();
+            
+            // Open dropdown if there's a hash in the URL
+            const hash = window.location.hash;
+            if (hash && hash.includes('-impact') || hash.includes('-trend')) {
+                const dropdown = document.getElementById('analysisDropdown');
+                const icon = document.querySelector('.dropdown-header i');
+                dropdown.classList.add('show');
+                icon.style.transform = 'rotate(180deg)';
+            }
         };
     </script>
 </body>
