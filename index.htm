@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,6 +46,7 @@
         a:hover { text-decoration: underline; }
         .ref-list { margin-top: 20px; }
         .ref-list p { margin: 10px 0; padding-left: 20px; text-indent: -20px; }
+        .content-text { /* Only count text inside this class */ }
         @media (max-width: 768px) { body { padding: 10px; } h1 { font-size: 24px; } main { padding: 15px; } .metadata { grid-template-columns: 1fr; } }
     </style>
 </head>
@@ -51,8 +54,8 @@
     <header>
         <img src="WebBanner2023.png" alt="Research Banner" class="banner">
         <h1>Efficiency and Sustainability in Aviation: A Comparative Analysis of Commercial and Military Aircraft Design</h1>
-        <h2> Student URN – 6927611</h2>
-        <h2> GitHub Username – EPSFY6927611</h2>
+        <h2>Student URN – 6927611</h2>
+        <h2>GitHub Username – EPSFY6927611</h2>
     </header>
     
     <main>
@@ -79,7 +82,7 @@
         
         <section id="abstract">
             <h3>Abstract</h3>
-            <p>This paper presents a comparative analysis of the drivers of efficiency and sustainability in commercial and military aviation. In the context of a growing global population and increasing air travel demand, this study argues that the two sectors are fundamentally diverged in their design priorities. Commercial aviation is demonstrated to be increasingly socio-environmentally driven, prioritising fuel efficiency, safety, and investment in sustainable innovations such as Sustainable Aviation Fuels (SAFs) and lightweight composites. In contrast, military aviation remains predominantly focused on performance and operational capabilities, often at the expense of environmental considerations. This divergence is exacerbated by geopolitical conflicts and tensions, which reinforce defence imperatives. By examining fleet data, technological trends, and industry forecasts, this analysis concludes that the performance paradigm of military aviation presents a significant challenge to broader aviation sustainability goals. This reveals a critical imbalance between technological advancement in performance and the urgent need for ecological responsibility.</p>
+            <p class="content-text">This paper presents a comparative analysis of the drivers of efficiency and sustainability in commercial and military aviation. In the context of a growing global population and increasing air travel demand, this study argues that the two sectors are fundamentally diverged in their design priorities. Commercial aviation is demonstrated to be increasingly socio-environmentally driven, prioritising fuel efficiency, safety, and investment in sustainable innovations such as Sustainable Aviation Fuels (SAFs) and lightweight composites. In contrast, military aviation remains predominantly focused on performance and operational capabilities, often at the expense of environmental considerations. This divergence is exacerbated by geopolitical conflicts and tensions, which reinforce defence imperatives. By examining fleet data, technological trends, and industry forecasts, this analysis concludes that the performance paradigm of military aviation presents a significant challenge to broader aviation sustainability goals. This reveals a critical imbalance between technological advancement in performance and the urgent need for ecological responsibility.</p>
         </section>
         
         <section id="analysis">
@@ -87,49 +90,49 @@
             
             <div id="population">
                 <h4>The potential impact of population growth on the aviation industry</h4>
-                <p>The projected growth in the global population (see Figure 1), forecast to reach nearly 10 billion by 2050, places direct and immense pressure on aviation. This demographic expansion will likely increase demand for both commercial air travel and national defence capabilities, setting the stage for the efficiency dilemma explored in this paper. As a key driver of globalisation and economic interdependence, aviation also plays a critical role in border security through organisations like the Royal Air Force (RAF). However, this vital industry faces a significant sustainability challenge, as transportation is responsible for over 12% of global CO₂ emissions (Khanra, 2025).</p>
+                <p class="content-text">The projected growth in the global population (see Figure 1), forecast to reach nearly 10 billion by 2050, places direct and immense pressure on aviation. This demographic expansion will likely increase demand for both commercial air travel and national defence capabilities, setting the stage for the efficiency dilemma explored in this paper. As a key driver of globalisation and economic interdependence, aviation also plays a critical role in border security through organisations like the Royal Air Force (RAF). However, this vital industry faces a significant sustainability challenge, as transportation is responsible for over 12% of global CO₂ emissions (<a href="https://doi.org/10.1016/j.nexus.2025.100557" target="_blank">Khanra, 2025</a>).</p>
                 
                 <div class="fig">
                     <img src="Population Forecast.png" alt="UN Population Growth Forecast">
                     <div class="fig-caption">Figure 1: UN's Average population growth forecast (2024)</div>
                 </div>
                 
-                <p>Aircraft manufacturers like Boeing and Airbus struggle to balance performance with environmental responsibility. According to the International Air Transport Association (IATA, 2023), the number of annual passengers is expected to surpass 8 billion by 2040, doubling pre-pandemic figures. This growth necessitates more frequent flights and a larger fleet, inherently increasing operational costs, fuel consumption, and greenhouse gas (GHG) emissions. Concurrently, a larger population strengthens a nation's industrial capacity and potential military power, leading to higher material and energy demands for the military sector. Consequently, aircraft efficiency has become a central concern in both civilian and military fields, yet each sector approaches it through distinctly different, and increasingly divergent, priorities.</p>
+                <p class="content-text">Aircraft manufacturers like Boeing and Airbus struggle to balance performance with environmental responsibility. According to the International Air Transport Association (<a href="https://www.iata.org/en/iata-repository/publications/economic-reports/global-outlook-for-air-transport---december-2023---report/" target="_blank">IATA, 2023</a>), the number of annual passengers is expected to surpass 8 billion by 2040, doubling pre-pandemic figures. This growth necessitates more frequent flights and a larger fleet, inherently increasing operational costs, fuel consumption, and greenhouse gas (GHG) emissions. Concurrently, a larger population strengthens a nation's industrial capacity and potential military power, leading to higher material and energy demands for the military sector. Consequently, aircraft efficiency has become a central concern in both civilian and military fields, yet each sector approaches it through distinctly different, and increasingly divergent, priorities.</p>
             </div>
             
             <div id="jetfuel">
                 <h4>How Jet fuel and engines impact the environment</h4>
-                <p>Commercial aviation has increasingly aligned itself with sustainability initiatives, largely due to international regulations, fuel cost, and public environmental awareness. Aircraft engines release two main GHGs, CO₂ and Water Vapour. When engines burn about 1 gallon of kerosene from jet fuel, 3.8kg of water vapour and 9.75kg of CO₂ are released in the atmosphere, with the water vapour being released through contrails (EIA, 2024). This is important as contrails cover 0.2% of the Earth's surface meaning the rate that radiation emitted by the Earth is reflected back down at higher rates, exacerbating the GHG effect. It is also important to consider that contrails are five times more potent to the heating up of the Earth than that of carbon dioxide (Cranfield Uni, 2021).</p>
+                <p class="content-text">Commercial aviation has increasingly aligned itself with sustainability initiatives, largely due to international regulations, fuel cost, and public environmental awareness. Aircraft engines release two main GHGs, CO₂ and Water Vapour. When engines burn about 1 gallon of kerosene from jet fuel, 3.8kg of water vapour and 9.75kg of CO₂ are released in the atmosphere, with the water vapour being released through contrails (<a href="https://www.eia.gov/environment/emissions/co2_vol_mass.php" target="_blank">EIA, 2024</a>). This is important as contrails cover 0.2% of the Earth's surface meaning the rate that radiation emitted by the Earth is reflected back down at higher rates, exacerbating the GHG effect. It is also important to consider that contrails are five times more potent to the heating up of the Earth than that of carbon dioxide (<a href="https://www.cranfield.ac.uk/alumni/communications/alumni-news/2021/0428-why-the-aviation-industry-needs-to-be-thinking-beyond-carbon-emissions" target="_blank">Cranfield Uni, 2021</a>).</p>
                 
-                <p>Hence, manufacturers are forced to invest heavily in technologies like hybrid propulsion systems (Airbus, 2024). SWITCH (Sustainable Water Injecting Turbofan Comprising Hybrid-Electrics) aims to demonstrate the potential of hybrid-electric turbofan technologies to improve fuel efficiency by 25% and reduce carbon dioxide and nitrous oxide emissions by allowing aircraft to access multiple energy sources like batteries which can be charged through renewable sources like solar panels and not just jet fuel (Airbus, 2021). Collectively, research conducted by the International Council on Clean Transportation (ICCT, 2025) found that the fuel efficiency of newly delivered commercial jet aircraft improved by roughly 43% from 1970 to 2024.</p>
+                <p class="content-text">Hence, manufacturers are forced to invest heavily in technologies like hybrid propulsion systems (<a href="https://www.airbus.com/en/innovation/future-aircraft" target="_blank">Airbus, 2024</a>). SWITCH (Sustainable Water Injecting Turbofan Comprising Hybrid-Electrics) aims to demonstrate the potential of hybrid-electric turbofan technologies to improve fuel efficiency by 25% and reduce carbon dioxide and nitrous oxide emissions by allowing aircraft to access multiple energy sources like batteries which can be charged through renewable sources like solar panels and not just jet fuel (<a href="https://www.airbus.com/en/innovation/energy-transition/hybrid-and-electric-flight" target="_blank">Airbus, 2021</a>). Collectively, research conducted by the International Council on Clean Transportation (<a href="https://theicct.org/publication/fuel-burn-of-new-commercial-jet-aircraft-1960-to-2024-feb25/" target="_blank">ICCT, 2025</a>) found that the fuel efficiency of newly delivered commercial jet aircraft improved by roughly 43% from 1970 to 2024.</p>
                 
-                <p>Conversely, military aviation prioritises performance, manoeuvrability and mission specific designs that often conflict with environmental goals. Advanced fighter jets utilise low bypass turbofan engines that maximise thrust at the expense of fuel efficiency (Pratt & Whitney, 2024). Turbofan engines are characterised by a steady flow of fuel and an oxidiser into the engine for continuous combustion. This is to produce high thrust reaching really high speeds of up to 5 times the speed of sound at the expense of large amounts of fuel, inherently releasing a lot of GHGs (A Baxter, F Ehrich, 2025).</p>
+                <p class="content-text">Conversely, military aviation prioritises performance, manoeuvrability and mission specific designs that often conflict with environmental goals. Advanced fighter jets utilise low bypass turbofan engines that maximise thrust at the expense of fuel efficiency (<a href="https://www.prattwhitney.com/en/products/military-engines/f135" target="_blank">Pratt & Whitney, 2024</a>). Turbofan engines are characterised by a steady flow of fuel and an oxidiser into the engine for continuous combustion. This is to produce high thrust reaching really high speeds of up to 5 times the speed of sound at the expense of large amounts of fuel, inherently releasing a lot of GHGs (<a href="https://www.britannica.com/technology/jet-engine/Low-bypass-turbofans-and-turbojets" target="_blank">A Baxter, F Ehrich, 2025</a>).</p>
             </div>
             
             <div id="production">
                 <h4>The aircraft production trend</h4>
-                <p>The production of commercial aircraft has been exponentially increasing from the 1960s to the 2000s (Kilpi, 2007) due to large demands for air travel. This allows investment flow into technological advancements (like hybrid propulsion systems), optimising air travel leading to greater aircraft ranges and faster speeds while being more ecologically responsible, becoming more favourable to public demands on sustainable travel and resulting in processes like space time compression.</p>
+                <p class="content-text">The production of commercial aircraft has been exponentially increasing from the 1960s to the 2000s (<a href="https://doi.org/10.1016/j.jairtraman.2006.10.008" target="_blank">Kilpi, 2007</a>) due to large demands for air travel. This allows investment flow into technological advancements (like hybrid propulsion systems), optimising air travel leading to greater aircraft ranges and faster speeds while being more ecologically responsible, becoming more favourable to public demands on sustainable travel and resulting in processes like space time compression.</p>
                 
-                <p>The increased funding and development within the commercial sector may be due to the stagnation in new models of Military aircraft and in general Military fleet expansion. A great example of this is in the USA and how post WW2 aircraft introductions were very active till the 1970s (Figure 2).</p>
+                <p class="content-text">The increased funding and development within the commercial sector may be due to the stagnation in new models of Military aircraft and in general Military fleet expansion. A great example of this is in the USA and how post WW2 aircraft introductions were very active till the 1970s (Figure 2).</p>
                 
                 <div class="fig">
                     <img src="Aircraft Designs in Operation By year.png" alt="USA Aircraft Designs in Operation">
                     <div class="fig-caption">Figure 2.1: USA Aircraft Designs in Operation, by year</div>
                 </div>
                 
-                <p>In Figure 2.1 we can see that during and post WW2 USA peaked in military as the war allowed innovation and technological experimentation. However, as efficiency and optimisation began reaching a technological barrier, production of new military aircraft began becoming stagnant (1975-1995), which is when engineers began diverging into the commercial sector.</p>
+                <p class="content-text">In Figure 2.1 we can see that during and post WW2 USA peaked in military as the war allowed innovation and technological experimentation. However, as efficiency and optimisation began reaching a technological barrier, production of new military aircraft began becoming stagnant (1975-1995), which is when engineers began diverging into the commercial sector.</p>
                 
                 <div class="fig">
                     <img src="Aircrafts introduced and retired.png" alt="US Military Aircraft Introduced and Retired">
-                    <div class="Aircrafts introduced and retired.png">Figure 2.2: The amount of US military aircrafts introduced and retired from 1915 to 1995</div>
+                    <div class="fig-caption">Figure 2.2: The amount of US military aircrafts introduced and retired from 1915 to 1995</div>
                 </div>
                 
-                <p>Furthermore in Figure 2.2 we can see that during active war the aircraft produced and retired was the highest due to their low life expectancy and need to be innovated for their specific jobs (bombing, dog fighting and transportation). Modern military aircrafts are able to reach speeds up to 5 times that of sound have internally fitted guns, bombs and missiles with a high destructive power meaning they are optimised for their respective roles. The main issue faced when it comes to military aircraft is the unfavourable cost to benefit ratio, meaning that the amount of investment needed for a new innovation is exponentially larger as aircrafts become more efficient for their role.</p>
+                <p class="content-text">Furthermore in Figure 2.2 we can see that during active war the aircraft produced and retired was the highest due to their low life expectancy and need to be innovated for their specific jobs (bombing, dog fighting and transportation). Modern military aircrafts are able to reach speeds up to 5 times that of sound have internally fitted guns, bombs and missiles with a high destructive power meaning they are optimised for their respective roles. The main issue faced when it comes to military aircraft is the unfavourable cost to benefit ratio, meaning that the amount of investment needed for a new innovation is exponentially larger as aircrafts become more efficient for their role.</p>
             </div>
             
             <div id="fleet">
                 <h4>Fleet sizes and trends</h4>
-                <p>As of June 2025, the global commercial fleet consists of 35,550 aircraft, ranging from 5 different market classes, from more than 6 different manufacturers as shown in Figure 3 (IATA, 2025). In contrast, the global military fleet has been experiencing some attrition. Its fleet consists of roughly 52,000 aircraft spread over 161 different countries with aircrafts like the F-16 still in production 50 years after its initial release. This, along with Figures 2.1 and 2.2, clearly demonstrate the technological barrier and the stagnation faced when it comes to the optimisation and introduction of military aircraft (Hoyle, 2024).</p>
+                <p class="content-text">As of June 2025, the global commercial fleet consists of 35,550 aircraft, ranging from 5 different market classes, from more than 6 different manufacturers as shown in Figure 3 (<a href="https://www.iata.org/en/publications/economics/reports/the-global-commercial-aircraft-fleet/" target="_blank">IATA, 2025</a>). In contrast, the global military fleet has been experiencing some attrition. Its fleet consists of roughly 52,000 aircraft spread over 161 different countries with aircrafts like the F-16 still in production 50 years after its initial release. This, along with Figures 2.1 and 2.2, clearly demonstrate the technological barrier and the stagnation faced when it comes to the optimisation and introduction of military aircraft (<a href="https://www.flightglobal.com/defence/how-the-global-military-fleet-shapes-up-in-our-2025-world-air-forces-review/160844.article" target="_blank">Hoyle, 2024</a>).</p>
                 
                 <div class="fig">
                     <img src="Commercial AF composition and Manufacturers.png" alt="Commercial Aviation Fleet Composition">
@@ -140,26 +143,26 @@
         
         <section id="conclusion">
             <h3>Conclusion</h3>
-            <p>In summary, this analysis reveals a clear divergence in how commercial and military aviation define and pursue efficiency. Driven by economic and environmental pressures, the commercial sector prioritises sustainable innovation leading to consistent gains in fuel efficiency. In contrast, the military sector's focus on performance and versatility, results in a performance driven paradigm where environmental considerations are secondary. Therefore, despite commercial progress, military aviation remains a significant and growing challenge to the broader goal of a sustainable future.</p>
+            <p class="content-text">In summary, this analysis reveals a clear divergence in how commercial and military aviation define and pursue efficiency. Driven by economic and environmental pressures, the commercial sector prioritises sustainable innovation leading to consistent gains in fuel efficiency. In contrast, the military sector's focus on performance and versatility, results in a performance driven paradigm where environmental considerations are secondary. Therefore, despite commercial progress, military aviation remains a significant and growing challenge to the broader goal of a sustainable future.</p>
         </section>
         
         <section id="references">
             <h3>References</h3>
             <div class="ref-list">
-                <p>Airbus (2021). Hybrid and Electric Flight | Airbus. [online] www.airbus.com. Available at: https://www.airbus.com/en/innovation/energy-transition/hybrid-and-electric-flight.</p>
-<p>Airbus (2024). Future Aircraft | Airbus. [online] www.airbus.com. Available at: https://www.airbus.com/en/innovation/future-aircraft.</p>
-<p>Baxter, A. and Ehrich, F. (2025). Jet Engine - Low-bypass Turbofans and Turbojets. [online] Encyclopedia Britannica. Available at: https://www.britannica.com/technology/jet-engine/Low-bypass-turbofans-and-turbojets.</p>
-<p>EIA (2023). Environment - U.S. Energy Information Administration (EIA) - U.S. Energy Information Administration (EIA). [online] Eia.gov. Available at: https://www.eia.gov/environment/emissions/co2_vol_mass.php.</p>
-<p>Hoyle, C. (2024). How the Global Military Fleet Shapes up in Our 2025 World Air Forces Review. [online] Flight Global. Available at: https://www.flightglobal.com/defence/how-the-global-military-fleet-shapes-up-in-our-2025-world-air-forces-review/160844.article.</p>
-<p>IATA (2023). Global Outlook for Air Transport a Local Sweet Spot December 2023 2 Global Outlook for Air Transport -A Local Sweet Spot Contents. [online] Available at: https://www.iata.org/en/iata-repository/publications/economic-reports/global-outlook-for-air-transport---december-2023---report/.</p>
-<p>IATA (2025). The Global Commercial Aircraft Fleet. [online] Iata.org. Available at: https://www.iata.org/en/publications/economics/reports/the-global-commercial-aircraft-fleet/.</p>
-<p>ICCT (2025). Fuel Burn of New Commercial Jet aircraft: 1960 to 2024 - International Council on Clean Transportation. [online] International Council on Clean Transportation. Available at: https://theicct.org/publication/fuel-burn-of-new-commercial-jet-aircraft-1960-to-2024-feb25/.</p>
-<p>Khanra, M., Prabhu, S.D. and Wietschel, M. (2025). Estimating Energy Demand for Decarbonising the Aviation and Maritime Fleets of Germany: an agent-based Technology Diffusion Approach considering Investment Behaviour. Energy Nexus, [online] 20(100557), p.100557. doi:https://doi.org/10.1016/j.nexus.2025.100557.</p>
-<p>Kilpi, J. (2007). Fleet Composition of Commercial Jet Aircraft 1952–2005: Developments in Uniformity and Scale. Journal of Air Transport Management, [online] 13(2), pp.81–89. doi:https://doi.org/10.1016/j.jairtraman.2006.10.008. </p>
-<p>Pratt and Whitney (2024). F135 Engine. [online] @prattandwhitney. Available at: https://www.prattwhitney.com/en/products/military-engines/f135.</p>
-<p>Qureshi, S. (2021). Contrail-induced Global warming: Why the Aviation Industry Needs to Be Thinking beyond Carbon Emissions. [online] Cranfield.ac.uk. Available at: https://www.cranfield.ac.uk/alumni/communications/alumni-news/2021/0428-why-the-aviation-industry-needs-to-be-thinking-beyond-carbon-emissions.</p>
-<p>Ramey, T.L. and Keating, E.G. (2009). United States Air Force Aircraft Fleet Retention Trends. a Historical Analysis. [online] Dtic.mil. Available at: https://apps.dtic.mil/sti/html/tr/ADA511891/ [Accessed 3 Dec. 2025]. </p>
-<p>United Nations (2024). World Population Prospects. [online] Un.org. Available at: https://population.un.org/wpp/graphs?loc=900&type=Demographic%20Profiles&category=Line%20Charts.</p>
+                <p>Airbus (2021). Hybrid and Electric Flight | Airbus. [online] www.airbus.com. Available at: <a href="https://www.airbus.com/en/innovation/energy-transition/hybrid-and-electric-flight" target="_blank">https://www.airbus.com/en/innovation/energy-transition/hybrid-and-electric-flight</a>.</p>
+                <p>Airbus (2024). Future Aircraft | Airbus. [online] www.airbus.com. Available at: <a href="https://www.airbus.com/en/innovation/future-aircraft" target="_blank">https://www.airbus.com/en/innovation/future-aircraft</a>.</p>
+                <p>Baxter, A. and Ehrich, F. (2025). Jet Engine - Low-bypass Turbofans and Turbojets. [online] Encyclopedia Britannica. Available at: <a href="https://www.britannica.com/technology/jet-engine/Low-bypass-turbofans-and-turbojets" target="_blank">https://www.britannica.com/technology/jet-engine/Low-bypass-turbofans-and-turbojets</a>.</p>
+                <p>EIA (2023). Environment - U.S. Energy Information Administration (EIA). [online] Eia.gov. Available at: <a href="https://www.eia.gov/environment/emissions/co2_vol_mass.php" target="_blank">https://www.eia.gov/environment/emissions/co2_vol_mass.php</a>.</p>
+                <p>Hoyle, C. (2024). How the Global Military Fleet Shapes up in Our 2025 World Air Forces Review. [online] Flight Global. Available at: <a href="https://www.flightglobal.com/defence/how-the-global-military-fleet-shapes-up-in-our-2025-world-air-forces-review/160844.article" target="_blank">https://www.flightglobal.com/defence/how-the-global-military-fleet-shapes-up-in-our-2025-world-air-forces-review/160844.article</a>.</p>
+                <p>IATA (2023). Global Outlook for Air Transport a Local Sweet Spot December 2023. [online] Available at: <a href="https://www.iata.org/en/iata-repository/publications/economic-reports/global-outlook-for-air-transport---december-2023---report/" target="_blank">https://www.iata.org/en/iata-repository/publications/economic-reports/global-outlook-for-air-transport---december-2023---report/</a>.</p>
+                <p>IATA (2025). The Global Commercial Aircraft Fleet. [online] Iata.org. Available at: <a href="https://www.iata.org/en/publications/economics/reports/the-global-commercial-aircraft-fleet/" target="_blank">https://www.iata.org/en/publications/economics/reports/the-global-commercial-aircraft-fleet/</a>.</p>
+                <p>ICCT (2025). Fuel Burn of New Commercial Jet aircraft: 1960 to 2024. [online] International Council on Clean Transportation. Available at: <a href="https://theicct.org/publication/fuel-burn-of-new-commercial-jet-aircraft-1960-to-2024-feb25/" target="_blank">https://theicct.org/publication/fuel-burn-of-new-commercial-jet-aircraft-1960-to-2024-feb25/</a>.</p>
+                <p>Khanra, M., Prabhu, S.D. and Wietschel, M. (2025). Estimating Energy Demand for Decarbonising the Aviation and Maritime Fleets of Germany. Energy Nexus, [online] 20(100557), p.100557. doi:<a href="https://doi.org/10.1016/j.nexus.2025.100557" target="_blank">https://doi.org/10.1016/j.nexus.2025.100557</a>.</p>
+                <p>Kilpi, J. (2007). Fleet Composition of Commercial Jet Aircraft 1952–2005. Journal of Air Transport Management, [online] 13(2), pp.81–89. doi:<a href="https://doi.org/10.1016/j.jairtraman.2006.10.008" target="_blank">https://doi.org/10.1016/j.jairtraman.2006.10.008</a>.</p>
+                <p>Pratt and Whitney (2024). F135 Engine. [online] @prattandwhitney. Available at: <a href="https://www.prattwhitney.com/en/products/military-engines/f135" target="_blank">https://www.prattwhitney.com/en/products/military-engines/f135</a>.</p>
+                <p>Qureshi, S. (2021). Contrail-induced Global warming: Why the Aviation Industry Needs to Be Thinking beyond Carbon Emissions. [online] Cranfield.ac.uk. Available at: <a href="https://www.cranfield.ac.uk/alumni/communications/alumni-news/2021/0428-why-the-aviation-industry-needs-to-be-thinking-beyond-carbon-emissions" target="_blank">https://www.cranfield.ac.uk/alumni/communications/alumni-news/2021/0428-why-the-aviation-industry-needs-to-be-thinking-beyond-carbon-emissions</a>.</p>
+                <p>Ramey, T.L. and Keating, E.G. (2009). United States Air Force Aircraft Fleet Retention Trends. [online] Dtic.mil. Available at: <a href="https://apps.dtic.mil/sti/html/tr/ADA511891/" target="_blank">https://apps.dtic.mil/sti/html/tr/ADA511891/</a> [Accessed 3 Dec. 2025].</p>
+                <p>United Nations (2024). World Population Prospects. [online] Un.org. Available at: <a href="https://population.un.org/wpp/graphs?loc=900&type=Demographic%20Profiles&category=Line%20Charts" target="_blank">https://population.un.org/wpp/graphs?loc=900&type=Demographic%20Profiles&category=Line%20Charts</a>.</p>
             </div>
         </section>
         
@@ -173,7 +176,7 @@
             <div class="box">
                 <h4><i class="fas fa-file-word"></i> Word Count</h4>
                 <div class="value" id="wc">0</div>
-                <div class="label">Total words in analysis & conclusion</div>
+                <div class="label">Analysis & conclusion only</div>
             </div>
         </div>
     </main>
@@ -223,11 +226,13 @@
         }
         
         function count() {
-            const c = (id) => {
-                const e = document.getElementById(id);
-                return e ? e.textContent.trim().split(/\s+/).filter(w=>w.length>0).length : 0;
-            };
-            document.getElementById('wc').innerText = (c('analysis')+c('conclusion')).toLocaleString();
+            // Only count text in paragraphs with class 'content-text' inside analysis and conclusion sections
+            let total = 0;
+            document.querySelectorAll('#analysis .content-text, #conclusion .content-text').forEach(p => {
+                const text = p.textContent.trim().split(/\s+/).filter(w => w.length > 0);
+                total += text.length;
+            });
+            document.getElementById('wc').innerText = total.toLocaleString();
         }
         
         document.addEventListener('DOMContentLoaded', () => {
